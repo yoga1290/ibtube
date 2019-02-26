@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import {MaterialModule} from './material.module'
 import { HeaderComponent } from './app/header/header.component';
+import { SearchComponent } from './app/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
