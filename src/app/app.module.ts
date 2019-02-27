@@ -5,8 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {MaterialModule} from './material.module'
-import { HeaderComponent } from './app/header/header.component';
-import { SearchComponent } from './app/search/search.component';
+import { HeaderComponent } from './header/header.component';
+import { SearchComponent } from './search/search.component';
+
+import { HttpClientModule }    from '@angular/common/http';
+import providers from '@services'
 
 @NgModule({
   declarations: [
@@ -17,9 +20,10 @@ import { SearchComponent } from './app/search/search.component';
   imports: [
     BrowserModule,
     MaterialModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers,//: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
