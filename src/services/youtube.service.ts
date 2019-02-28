@@ -21,28 +21,41 @@ export class YoutubeService {
     private http: HttpClient
   ) { }
 
-  
+  private headers = new HttpHeaders({
+        key,
+        'Content-Type':  'application/json'
+      });  
 
   // https://developers.google.com/youtube/v3/docs/search/list
-  getSearchResult() : Observable<any> {
+  getSearchResult(
+    channelId?:string,// = undefined,
+    order:string = 'relevance') : Observable<any> {
 
-    console.log('getSearchResult')
+    console.log('getSearchResult', {channelId})
+
+    let query = {
+      channelId
+    }
     
-    let order = 'relevance'
+    let part = [
+      'snippet',
+      ...Object.keys(query)
+      .filter(k=>query[k])
+       //to avoid keys w undefined values
+    ].join(',')
 
     let params = {
-      part: [
-        "order"
-      ].join(','), //channelId , order
+      part,
       key,
       order
     }
 
     // console.log('params', params)
-
+    let headers = this.headers
     return this.http.get<any>(
           "https://www.googleapis.com/youtube/v3/search", {
-            params
+            params,
+            headers
           }).pipe();
   }
 }
