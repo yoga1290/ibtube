@@ -30,7 +30,7 @@ export class YoutubeService {
   getSearchResult(
     q?:string,
     channelId?:string,
-    type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
+    type: string | "any" | "channel" | "playlist" = "video,channel,playlist",
     time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
     order:string = 'relevance') : Observable<any> {
 
@@ -40,8 +40,9 @@ export class YoutubeService {
       TODAY: 24*60*60*1000,
       WEEK: 7*24*60*60*1000,
       MONTH: 30*24*60*60*1000
-    }[time];
+    }[time.toUpperCase()];
 
+    type = (type.toLowerCase()!=='any') ? type.toLowerCase():'video,channel,playlist';
     let query = {
       type,
       part,

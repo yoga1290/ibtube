@@ -21,6 +21,15 @@ export class SearchComponent implements OnInit {
     console.log('SearchComponent.youtubeService', youtubeService)
   }
 
+
+  // type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
+  //   time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
+  
+  filters = [{
+    name: 'upload date',
+    options: []
+  }]
+
   ngOnInit() {
     
     let q, time, type;
