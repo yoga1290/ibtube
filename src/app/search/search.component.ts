@@ -24,11 +24,35 @@ export class SearchComponent implements OnInit {
 
   // type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
   //   time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
-  
-  filters = [{
-    name: 'upload date',
-    options: []
-  }]
+
+  filters = {
+    'type': {
+      name: 'Type',
+      options: [{
+        label: 'Any',
+        value: 'any'
+      }, {
+        label: 'Channel',
+        value: 'channel'
+      }, {
+        label: 'Playlist',
+        value: 'playlist'
+      }]
+    },
+    'time': {
+      name: 'Upload Date',
+      options: [{
+        label: 'today',
+        value: 'TODAY'
+      }, {
+        label: 'This week',
+        value: 'WEEK'
+      }, {
+        label: 'This month',
+        value: 'MONTH'
+      }]
+    }
+  }
 
   ngOnInit() {
     
