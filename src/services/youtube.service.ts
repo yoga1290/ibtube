@@ -4,10 +4,16 @@ import { Observable } from 'rxjs';
 
 // @env is an alias defined in tsconfig.json
 import { environment } from '@env'
+// import { SearchQuery } from './models/SearchQuery'
+// import { SearchListResponse } from './models/SearchListResponse'
 
 console.log('YoutubeService', environment)
 
 const { key } = environment.YOUTUBE_API;
+const headers = new HttpHeaders({
+  key,
+  'Content-Type':  'application/json'
+});
 
 console.log('YoutubeService', key)
 
@@ -21,37 +27,34 @@ export class YoutubeService {
     private http: HttpClient
   ) { }
 
-  private headers = new HttpHeaders({
-        key,
-        'Content-Type':  'application/json'
-      });  
-
-  // https://developers.google.com/youtube/v3/docs/search/list
   getSearchResult(
-    channelId?:string,// = undefined,
+    q?:string,
+    channelId?:string,
+    type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
+    time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
     order:string = 'relevance') : Observable<any> {
 
-    console.log('getSearchResult', {channelId})
+    let part = ['snippet'].join(',')
+    let publishedBefore = {
+      ANY: undefined,
+      TODAY: 24*60*60*1000,
+      WEEK: 7*24*60*60*1000,
+      MONTH: 30*24*60*60*1000
+    }[time];
 
     let query = {
-      channelId
-    }
-    
-    let part = [
-      'snippet',
-      ...Object.keys(query)
-      .filter(k=>query[k])
-       //to avoid keys w undefined values
-    ].join(',')
-
-    let params = {
+      type,
       part,
-      key,
-      order
+      order,
+      publishedBefore
     }
+
+    let params = { key }
+    Object.keys(query)
+    .filter(k => query[k])
+    .forEach(k => (params[k] = query[k]))
 
     // console.log('params', params)
-    let headers = this.headers
     return this.http.get<any>(
           "https://www.googleapis.com/youtube/v3/search", {
             params,
