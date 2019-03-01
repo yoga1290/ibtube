@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute }     from '@angular/router';
+import { ActivatedRoute, Router }     from '@angular/router';
 import { map }                from 'rxjs/operators';
 
 // @services is an alias defined in tsconfig.json
@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private youtubeService:YoutubeService
   ) {
     console.log('SearchComponent.youtubeService', youtubeService)
@@ -24,13 +25,16 @@ export class SearchComponent implements OnInit {
 
   // type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
   //   time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
-
+  log = console.log
+  
+  query = ''
   filters = {
-    'type': {
+    type: {
       name: 'Type',
+      value: null,
       options: [{
         label: 'Any',
-        value: 'any'
+        value: 'video,channel,playlist'
       }, {
         label: 'Channel',
         value: 'channel'
@@ -39,8 +43,22 @@ export class SearchComponent implements OnInit {
         value: 'playlist'
       }]
     },
-    'time': {
+    time: {
       name: 'Upload Date',
+      value: null,
+      options: [{
+        label: 'today',
+        value: 'TODAY'
+      }, {
+        label: 'This week',
+        value: 'WEEK'
+      }, {
+        label: 'This month',
+        value: 'MONTH'
+      }]
+    },
+    order: {
+      name: 'Order',
       options: [{
         label: 'today',
         value: 'TODAY'
@@ -54,35 +72,43 @@ export class SearchComponent implements OnInit {
     }
   }
 
+  keys = Object.keys
+  
   ngOnInit() {
     
-    let q, time, type;
-    
-    this.route.params.subscribe(params => {
-      q = params['query']
-      time = params['time']
-      type = params['type']
+    this.route.queryParams.subscribe(params => {
+      this.query = params['q'];
+      ['time', 'type', 'order'].forEach(k => {
+        this.filters[k].value = params[k]
+      });
     })
 
-    // let q = this.route
-    //   .queryParamMap
-    //   .pipe(map(params => params.get('query') || ''));
+    let q = this.query;
+    let type = this.filters['type'].value;
+    let time = this.filters['time'].value;
 
-    // let time = this.route
-    //   .queryParamMap
-    //   .pipe(map(params => params.get('time') || ''));
-    
-    // let type = this.route
-    //   .queryParamMap
-    //   .pipe(map(params => params.get('type') || ''));
-    
-    console.log('SearchComponent', 'ngOnInit', q, time, type)
-
+    console.log('ngOnInit', q, type, time)
     this.youtubeService
     .getSearchResult(q, null, type, time)
     .subscribe((data:any) => {
       console.log('OK', data);
     })
+  }
+
+  updateRouteParams() {
+    let queryParams = {
+      q: this.query
+    }
+
+    Object.keys(this.filters).forEach(k => {
+      queryParams[k] = this.filters[k].value
+    })
+    
+    this.router.navigate([], {
+        relativeTo: this.route,
+        queryParams, 
+        queryParamsHandling: "merge"
+    });
   }
 
 }

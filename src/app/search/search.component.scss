@@ -41,8 +41,19 @@ a#filters:hover {
     transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.filters-container {
+    max-height: 0;
+    // display: none;
+    transition: max-height 0.25s ease-out;
+}
+.filters-container.visible {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+}
+
 .filter {
     padding: 0 32px 0 0;
+    display: inline-block;
 
     .filter-group-name {
         color: #0A0A0A;
@@ -61,5 +72,14 @@ a#filters:hover {
         color: #606060;
         padding-top: 12px;
         display: block;
+
+        a.selected, a:active {
+            font-weight: bold;
+        }
+        i.material-icons {
+            font-size: 16px;
+            top: 5px;
+            position: relative;
+        }
     }
 }

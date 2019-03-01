@@ -30,19 +30,22 @@ export class YoutubeService {
   getSearchResult(
     q?:string,
     channelId?:string,
-    type: string | "any" | "channel" | "playlist" = "video,channel,playlist",
-    time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
+    type: "channel" | "playlist" | "video,channel,playlist" = "video,channel,playlist",
+    time?: "TODAY" | "WEEK" | "MONTH",
     order:string = 'relevance') : Observable<any> {
 
     let part = ['snippet'].join(',')
-    let publishedBefore = {
-      ANY: undefined,
-      TODAY: 24*60*60*1000,
-      WEEK: 7*24*60*60*1000,
-      MONTH: 30*24*60*60*1000
-    }[time.toUpperCase()];
+    
+    let publishedBefore = time ? new Date(
+      new Date().getTime() 
+      - {
+        ANY: undefined,
+        TODAY: 24*60*60*1000,
+        WEEK: 7*24*60*60*1000,
+        MONTH: 30*24*60*60*1000
+      }[time.toUpperCase()]
+    ).toISOString():null;
 
-    type = (type.toLowerCase()!=='any') ? type.toLowerCase():'video,channel,playlist';
     let query = {
       type,
       part,

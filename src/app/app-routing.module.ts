@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SearchComponent } from './search/search.component'
+import { VideoComponent } from './video/video.component'
+
 const routes: Routes = [{
   path: 'search', //?query
   component: SearchComponent
@@ -10,7 +12,7 @@ const routes: Routes = [{
   component: SearchComponent
 }, {
   path: 'video/:videoId',
-  component: SearchComponent
+  component: VideoComponent
 }];
 
 @NgModule({

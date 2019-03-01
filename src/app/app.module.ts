@@ -9,13 +9,15 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 
 import { HttpClientModule }    from '@angular/common/http';
-import providers from '@services'
+import providers from '@services';
+import { VideoComponent } from './video/video.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
