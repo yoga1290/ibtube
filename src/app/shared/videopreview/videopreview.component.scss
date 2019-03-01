@@ -1,0 +1,44 @@
+.video-preview {
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    position: relative;
+
+    .title {
+        color: #0A0A0A;
+        display: block;
+        max-height: 48px;
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .channel, .date, .view-count {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+    .description {
+        color: #606060;
+        padding-top: 8px;
+        margin-bottom: 8px;
+        display: block;
+        line-height: 18px;
+        max-height: 36px;
+        overflow: hidden;
+        font-size: 13px;
+        font-weight: 400;
+        text-transform: none;
+    }
+
+    img {
+        margin-right: 16px;
+        width: 246px;
+        height: 138px;
+        display: inline-block;
+        position: relative;
+    }
+}

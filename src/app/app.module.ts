@@ -10,14 +10,16 @@ import { SearchComponent } from './search/search.component';
 
 import { HttpClientModule }    from '@angular/common/http';
 import providers from '@services';
-import { VideoComponent } from './video/video.component'
+import { VideoComponent } from './video/video.component';
+import { VideopreviewComponent } from './shared/videopreview/videopreview.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SearchComponent,
-    VideoComponent
+    VideoComponent,
+    VideopreviewComponent
   ],
   imports: [
     BrowserModule,

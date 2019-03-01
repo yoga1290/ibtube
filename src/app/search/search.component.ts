@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router }     from '@angular/router';
 import { map }                from 'rxjs/operators';
-
+import { SearchListResponse } from '../../services/models/SearchListResponse'
 // @services is an alias defined in tsconfig.json
 // import { YoutubeService } from '@services/youtube.service'
 import { YoutubeService } from '../../services/youtube.service'
@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
   // type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
   //   time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
   log = console.log
-  
+
   query = ''
   filters = {
     type: {
@@ -59,20 +59,25 @@ export class SearchComponent implements OnInit {
     },
     order: {
       name: 'Order',
+      value: 'relevance',
       options: [{
-        label: 'today',
-        value: 'TODAY'
+        label: 'Relevance',
+        value: 'relevance'
       }, {
-        label: 'This week',
-        value: 'WEEK'
+        label: 'Upload date',
+        value: 'date'
       }, {
-        label: 'This month',
-        value: 'MONTH'
+        label: 'View count',
+        value: 'viewCount'
+      }, {
+        label: 'Rating',
+        value: 'rating'
       }]
     }
   }
 
   keys = Object.keys
+  searchListResponse: SearchListResponse = null
   
   ngOnInit() {
     
@@ -82,16 +87,25 @@ export class SearchComponent implements OnInit {
         this.filters[k].value = params[k]
       });
     })
+    // this.fetch();
+  }
 
+  fetch() {
     let q = this.query;
     let type = this.filters['type'].value;
     let time = this.filters['time'].value;
 
-    console.log('ngOnInit', q, type, time)
     this.youtubeService
     .getSearchResult(q, null, type, time)
-    .subscribe((data:any) => {
-      console.log('OK', data);
+    .subscribe((searchListResponse: SearchListResponse) => {
+      console.log('OK', searchListResponse.items[0].snippet.title);
+      this.searchListResponse = searchListResponse
+      // searchListResponse.items[0].snippet.title;
+      // searchListResponse.items[0].snippet.channelTitle;
+      // searchListResponse.items[0].snippet.description
+      // searchListResponse.items[0].snippet.publishedAt
+      // searchListResponse.items[0].snippet.thumbnails
+      // searchListResponse.pageInfo.totalResults
     })
   }
 
@@ -109,6 +123,8 @@ export class SearchComponent implements OnInit {
         queryParams, 
         queryParamsHandling: "merge"
     });
+    
+    // this.fetch();
   }
 
 }

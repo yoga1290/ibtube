@@ -1,4 +1,16 @@
-interface SearchListResponse {
-    etag: string;
-    items: any[];
+// https://developers.google.com/youtube/v3/docs/search/list
+
+import { SearchResult } from './SearchResult'
+
+export interface SearchListResponse {
+    "kind": "youtube#searchListResponse",
+    "etag": any,
+    "nextPageToken": string,
+    "prevPageToken": string,
+    "regionCode": string,
+    "pageInfo": {
+      "totalResults": number,
+      "resultsPerPage": number
+    },
+    "items": SearchResult[]
 }

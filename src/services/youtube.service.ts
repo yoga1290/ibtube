@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 // @env is an alias defined in tsconfig.json
 import { environment } from '@env'
 // import { SearchQuery } from './models/SearchQuery'
-// import { SearchListResponse } from './models/SearchListResponse'
+import { SearchListResponse } from './models/SearchListResponse'
+import { PlaylistListResponse } from './models/PlaylistListResponse'
 
 console.log('YoutubeService', environment)
 
@@ -32,7 +33,9 @@ export class YoutubeService {
     channelId?:string,
     type: "channel" | "playlist" | "video,channel,playlist" = "video,channel,playlist",
     time?: "TODAY" | "WEEK" | "MONTH",
-    order:string = 'relevance') : Observable<any> {
+    order: "relevance" | "date" | "viewCount" |"rating" = 'relevance')
+    
+    : Observable<SearchListResponse> {
 
     let part = ['snippet'].join(',')
     
@@ -59,8 +62,50 @@ export class YoutubeService {
     .forEach(k => (params[k] = query[k]))
 
     // console.log('params', params)
-    return this.http.get<any>(
+    return this.http.get<SearchListResponse>(
           "https://www.googleapis.com/youtube/v3/search", {
+            params,
+            headers
+          }).pipe();
+  }
+
+
+  getPlaylist(
+    q?:string,
+    channelId?:string,
+    type: "channel" | "playlist" | "video,channel,playlist" = "video,channel,playlist",
+    time?: "TODAY" | "WEEK" | "MONTH",
+    order: "relevance" | "date" | "viewCount" |"rating" = 'relevance')
+    
+    : Observable<PlaylistListResponse> {
+
+    let part = ['snippet'].join(',')
+    
+    let publishedBefore = time ? new Date(
+      new Date().getTime() -
+      { 
+        ANY: undefined,
+        TODAY: 24*60*60*1000,
+        WEEK: 7*24*60*60*1000,
+        MONTH: 30*24*60*60*1000
+      }[time.toUpperCase()]
+    ).toISOString():null;
+
+    let query = {
+      type,
+      part,
+      order,
+      publishedBefore
+    }
+
+    let params = { key }
+    Object.keys(query)
+    .filter(k => query[k])
+    .forEach(k => (params[k] = query[k]))
+
+    // console.log('params', params)
+    return this.http.get<PlaylistListResponse>(
+          "https://www.googleapis.com/youtube/v3/playlists", {
             params,
             headers
           }).pipe();
