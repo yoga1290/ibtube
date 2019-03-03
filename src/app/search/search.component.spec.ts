@@ -2,8 +2,13 @@ import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing'
 
 import { VideoPreviewComponent } from '../shared/video-preview/video-preview.component';
 import { PlaylistPreviewComponent } from '../shared/playlist-preview/playlist-preview.component'
+import { ChannelComponent } from '../channel/channel.component';
+import { SearchComponent } from '../search/search.component';
+import { VideoComponent } from '../video/video.component';
+import { ROUTES } from '../app-routing.module'
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
-import { SearchComponent } from './search.component';
 
 import {RouterTestingModule} from '@angular/router/testing';
 import { HttpRequest } from '@angular/common/http';
@@ -27,19 +32,28 @@ import * as mockResponse from '@mocks/searchListResponse.json'
 describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
+  let router: Router;
+  let location: Location;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
         VideoPreviewComponent,
         PlaylistPreviewComponent,
+        ChannelComponent, //needed by the router
+        VideoComponent, //needed by the router
         SearchComponent ],
       imports: [
         HttpClientTestingModule,
-        RouterTestingModule
+        RouterTestingModule.withRoutes(ROUTES)
       ]
     })
     .compileComponents();
+
+    router = TestBed.get(Router);
+    location = TestBed.get(Location);
+
+    router.initialNavigation();
   }));
 
   beforeEach(() => {
@@ -81,25 +95,27 @@ describe('SearchComponent', () => {
         httpMock: HttpTestingController,
         youtubeService: YoutubeService
       ) => {
-  
-        expect(youtubeService).toBeTruthy();
-  
-        const compiled = fixture.debugElement.nativeElement;
-  
+    
         let validator = (req: HttpRequest<any>) => {
           expect(req.url).toEqual(API_SEARCH);
           return true;
         };
 
-        // on initialization/ngInit()
-        httpMock.expectOne(validator);
-
-        component.updateRouteParams();
-
-        const mockReq = httpMock.expectOne(validator);
-
-        mockReq.flush(mockResponse);
+        // expectOne on initialization/ngInit():
+        const mockReq1 = httpMock.expectOne(validator);
+        mockReq1.flush(mockResponse);
         httpMock.verify();
-  
+
+        fixture.whenStable().then(() => {
+
+            component.query = 'HELLO NEW QUERY';
+            component.updateRouteParams();
+
+            const mockReq2 = httpMock.expectOne(validator);
+
+            mockReq2.flush(mockResponse);
+            httpMock.verify();
+        });
+
       }));
 });
