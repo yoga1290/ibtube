@@ -1,0 +1,40 @@
+<div
+    *ngIf="playlist"
+    class="playlist-preview row col-xs-12">
+    
+    <div class="thumbnail">
+      <img
+        [alt]="playlist.snippet.title"
+        [src]="playlist.snippet.thumbnails.medium.url">
+      <div
+        class="thumbnail-overlay">
+        <div class="thumbnail-overlay-text">
+            {{playlist.contentDetails.itemCount}}
+            <i class="material-icons">playlist_play</i>    
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="col-xs-8 col-md-6">
+        <div class="title">
+                {{playlist.snippet.title}}
+        </div>
+        <div class="row">
+            <div class="channel">
+                {{playlist.snippet.channelTitle}}
+            </div>•
+            <span class="view-count">
+                 views
+            </span>•
+            <span class="date">
+                {{fromNow(playlist.snippet.publishedAt)}}
+            </span>
+        </div>
+        
+        <div class="description">
+                {{playlist.snippet.description}}
+        </div>        
+    </div>
+    
+</div>
