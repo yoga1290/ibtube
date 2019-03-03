@@ -1,0 +1,183 @@
+{
+        "kind": "youtube#channelSectionListResponse",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/IaGjKGC7UuAa2Aov8puMvjae-0E\"",
+        "items": [
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/ivAnYJ9goqVR7aMYKyZHKGfo_bo\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.aqsRo9JYx5M",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 0
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLl0zOVHweh5n_RwLHckidNN-CQFcGGrK2"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/3oIVJc_J8AOrwQ3YVNKYhxLwCzA\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.urH3q0Wn23U",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 1
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLl0zOVHweh5nfQsSQ3Hin_wkvmR2beV_j"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/5xxYAhLKcmRVYoq4nONa_pJNCEs\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.jpQSKxsnbc0",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 2
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLl0zOVHweh5lH60Rjkc08rONpVqphJmaU"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/sjTjKhx27hGFJ6crXj-b-zQMZ40\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.ebKlgRwnpFY",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 3
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLl0zOVHweh5mNGioX0suUc4ZNxNthCTNn"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/WOoNcub68uhEwWwBjsrXLfFvWwY\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.E_XOxWMm6bU",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 4
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLl0zOVHweh5mbgrTKkgwr1X-4f5D3tPU1"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/1_Ff6Sv2q2fMhhy6R8EW1aB7D_s\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.-wsNFmLGN6o",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 5
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLt5o8oUo26JGlzTXf6DyUsfcHZhm0G9Fk"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/WNCqianlH3DsmCsk3OiA2u_xYw8\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.aBfUFr9SBY0",
+        "snippet": {
+        "type": "singlePlaylist",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "position": 6
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLt5o8oUo26JFP1GoWQAyeCW8XQU65Putp"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/1HfkXco8tdTFj11DUbxF9zK7MyI\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.0Qj_byWfaX0",
+        "snippet": {
+        "type": "multiplePlaylists",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "title": "تقارير ومقابلات",
+        "position": 7,
+        "localized": {
+            "title": "تقارير ومقابلات"
+        }
+        },
+        "contentDetails": {
+        "playlists": [
+            "PLl0zOVHweh5lrrXqLiUJ7ogILsB_FQ6U7",
+            "PLl0zOVHweh5m6c1lFlvb8lCZvOAeHSlhe",
+            "PLl0zOVHweh5mH2FlYV6PunlGDFruVJXBl",
+            "PLl0zOVHweh5lSSDG2s2LOVCVZ3eSnlQhE",
+            "PLl0zOVHweh5lm3gqe1WSfv-E_r-egq-Ag",
+            "PLl0zOVHweh5nfMPy1ukmnwWQKJy0SbhL6"
+        ]
+        }
+        },
+        {
+        "kind": "youtube#channelSection",
+        "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/5FwowXRFcZQqBKF9A4rukJVDrCc\"",
+        "id": "UCnxcG6CqTO85dBXlyjPKInA.HvnTts3k8Fg",
+        "snippet": {
+        "type": "multipleChannels",
+        "style": "horizontalRow",
+        "channelId": "UCnxcG6CqTO85dBXlyjPKInA",
+        "title": "Dubai Media Channels",
+        "position": 8,
+        "localized": {
+            "title": "Dubai Media Channels"
+        }
+        },
+        "contentDetails": {
+        "channels": [
+            "UCOhiubMBr7ELL20N7y6vfjQ",
+            "UCuyiRRgNobUdBqKBJ-ItyTw",
+            "UCpTncbkcIjS0v51sJz2jhsg",
+            "UCRhxxdYgh4Bc0R27NDpCWsA",
+            "UCy3mHETEqjU9wtwiLHfg16A",
+            "UCBzBlMg9Z0drk5tG8uo3dVg",
+            "UCTLMw_Yflq1--ZfDpis7bgQ",
+            "UCBYZ1ufNQtPVBx6fBEiDN7g",
+            "UCEmayGKQnuysygWru7lCAmQ",
+            "UCFNbWX5JH4byrgUhjlaiYWw",
+            "UCZBr2ZWLbRzHa1i0LLx5cBw",
+            "UCmJr9VRnC8Q1TCIrf2G8bcg",
+            "UCr_VIVfcpv0NJyJ-rTQX7ZA",
+            "UCrxT9VVKe_X-rSEpnzIpXPQ",
+            "UCFk_TvqG1qQ72fl4mDI23Lw",
+            "UCQ3V2rldRXRIVJT48lOeUHQ",
+            "UCYtCYvJg9VZav6arnBy4Lvg",
+            "UCZizg07gQ8i794ONkKhMRGQ",
+            "UCnmcleLs4asXwWUf3Df0m6g",
+            "UCyzKvRnZBfMO6zyExHlKfwg",
+            "UCv4xeKeSoLK3ozhMW6Ylzeg"
+        ]
+        }
+        }
+        ]
+    }

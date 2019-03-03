@@ -1,5 +1,5 @@
-import { YoutubeService } from './youtube.service'
+import { YoutubeService } from './youtube.service';
 
-export default [ 
+export default [
     {provide: YoutubeService}
-]
+];

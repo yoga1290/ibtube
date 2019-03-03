@@ -1,3 +1,44 @@
-<p>
-  video works!
-</p>
+<div class="container">
+
+  <div class="row col-xs-12">
+      <div class="row col-sm-1 col-md-2"></div>
+      <div class="row col-xs-12 col-sm-10 col-md-8" id="ytplayer"></div>
+  </div>
+
+  <div class="row col-xs-12">
+      <div class="row col-sm-1 col-md-2"></div>
+      <div class="row col-xs-12 col-sm-10 col-md-8">
+
+        <div class="title">
+          {{video.snippet.title}}
+        </div>
+        <div class="statistics row col-xs-12">
+            
+            <i class="material-icons">thumb_up</i>
+            {{video.statistics.likeCount}}
+            <i class="material-icons">thumb_down</i>
+            {{video.statistics.dislikeCount}}
+        </div>
+
+        <div class="col-xs-12">
+            <div
+              (click)="goToRoute('channel/' + video.snippet.channelId)"
+              class="channel col-xs-12">
+                {{video.snippet.channelTitle}}
+            </div>
+            <div class="published-date col-xs-12">
+                Published on {{format(video.snippet.publishedAt)}}
+            </div>
+
+            <div class="description">
+                {{video.snippet.description}}
+            </div>
+            
+        </div>
+        
+        
+
+      </div>
+  </div>
+  
+</div>

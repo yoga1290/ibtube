@@ -5,6 +5,7 @@
 // https://console.developers.google.com/apis/library/youtube.googleapis.com?q=youtube&folder
 export const environment = {
   production: false,
+  useHash: false,
   YOUTUBE_API: {
     key: 'AIzaSyChZWWjoQlp7Nz_Fbe9eWaqW761vgTlvLE'
   }

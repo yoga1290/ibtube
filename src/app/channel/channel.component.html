@@ -1,0 +1,51 @@
+<div
+  *ngIf="channelListResponse"
+  class="container">
+
+  <div class="banner">
+      <img
+        class="banner col-xs-12 col-sm-12 col-md-12"
+        [src]="channelListResponse.items[0].brandingSettings.image.bannerImageUrl">
+
+      <div class="offset col-sm-1 col-md-3"></div>
+
+      <img
+          class="logo col-xs-3 col-sm-2 col-md-1"
+          [src]="channelListResponse.items[0].snippet.thumbnails.medium.url">
+
+      <div class="offset col-sm-2 col-md-4"></div>      
+      <div 
+        class="channel-info">
+        
+        <h1 class="channel-name">
+          {{channelListResponse.items[0].snippet.title}}
+        </h1>
+        <span class="subscribers">
+          {{channelListResponse.items[0].statistics.subscriberCount}} subscribers
+        </span>
+      </div>
+  </div>
+
+  <div
+    class="content row">
+    <!-- Playlist -->
+
+    <div
+      class="col-xs-12"
+      *ngFor="let playlistId of keys(playlistById)">
+
+      <div class="row col-sm-1 col-md-2"></div>
+      <div class="row col-xs-12 col-sm-10 col-md-8">
+          <app-playlist-preview
+            [playlist]="playlistById[playlistId]">
+          </app-playlist-preview>
+      </div>
+
+      
+    </div>
+
+  </div>
+  
+
+  
+</div>

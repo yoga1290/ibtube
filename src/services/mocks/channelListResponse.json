@@ -1,0 +1,112 @@
+{
+    "kind": "youtube#channelListResponse",
+    "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/KBkiKkd9Dn1eZknlM4QHikvahLg\"",
+    "pageInfo": {
+     "totalResults": 1,
+     "resultsPerPage": 1
+    },
+    "items": [
+     {
+      "kind": "youtube#channel",
+      "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/hqAg4hMgsGn_xmUDPqaAme3YY0U\"",
+      "id": "UCnxcG6CqTO85dBXlyjPKInA",
+      "snippet": {
+       "title": "Dubai TV I تلفزيون دبي",
+       "description": "دبي الأولى هي منصة إعلامية رسمية رائدة في دولة الإمارات العربية المتحدة في مجال تقديم أهم البرامج الإخبارية والسياسية والاقتصادية بالإضافة إلى أهم برامج الترفيه والمنوعات.\n\nA leading TV Channel in Gulf and the Arab World which provides a variety of premium , exclusive Entertainment, News, Economic, and  Technology programming.",
+       "customUrl": "dubaitv",
+       "publishedAt": "2015-03-22T08:32:52.000Z",
+       "thumbnails": {
+        "default": {
+         "url": "https://yt3.ggpht.com/a-/AAuE7mCK3gYurHI3Wd0ApNpmnf5pWSWHHnpJuw0apg=s88-mo-c-c0xffffffff-rj-k-no",
+         "width": 88,
+         "height": 88
+        },
+        "medium": {
+         "url": "https://yt3.ggpht.com/a-/AAuE7mCK3gYurHI3Wd0ApNpmnf5pWSWHHnpJuw0apg=s240-mo-c-c0xffffffff-rj-k-no",
+         "width": 240,
+         "height": 240
+        },
+        "high": {
+         "url": "https://yt3.ggpht.com/a-/AAuE7mCK3gYurHI3Wd0ApNpmnf5pWSWHHnpJuw0apg=s800-mo-c-c0xffffffff-rj-k-no",
+         "width": 800,
+         "height": 800
+        }
+       },
+       "localized": {
+        "title": "Dubai TV I تلفزيون دبي",
+        "description": "دبي الأولى هي منصة إعلامية رسمية رائدة في دولة الإمارات العربية المتحدة في مجال تقديم أهم البرامج الإخبارية والسياسية والاقتصادية بالإضافة إلى أهم برامج الترفيه والمنوعات.\n\nA leading TV Channel in Gulf and the Arab World which provides a variety of premium , exclusive Entertainment, News, Economic, and  Technology programming."
+       },
+       "country": "AE"
+      },
+      "statistics": {
+       "viewCount": "54273310",
+       "commentCount": "0",
+       "subscriberCount": "235328",
+       "hiddenSubscriberCount": false,
+       "videoCount": "4302"
+      },
+      "brandingSettings": {
+       "channel": {
+        "title": "Dubai TV I تلفزيون دبي",
+        "description": "دبي الأولى هي منصة إعلامية رسمية رائدة في دولة الإمارات العربية المتحدة في مجال تقديم أهم البرامج الإخبارية والسياسية والاقتصادية بالإضافة إلى أهم برامج الترفيه والمنوعات.\n\nA leading TV Channel in Gulf and the Arab World which provides a variety of premium , exclusive Entertainment, News, Economic, and  Technology programming.",
+        "keywords": "\"دبي الأولى\" \"قناة دبي\" \"قناة دبي الأولى\" \"شبكة تليفزيون دبي\" \"مسلسل جود\" \"كعب عالي\" \"مسلسل كعب عالي\" جود \"مطلقات صغيرات\" \"حفلات عمرو دياب\" UCnxc \"dubai tv\" tvserieschange Dubai TV 2019 \"تلفزيون دبي 2019\"",
+        "defaultTab": "Featured",
+        "showRelatedChannels": true,
+        "showBrowseView": true,
+        "featuredChannelsTitle": "DMI Channels",
+        "featuredChannelsUrls": [
+         "UCOhiubMBr7ELL20N7y6vfjQ",
+         "UCZizg07gQ8i794ONkKhMRGQ",
+         "UCFNbWX5JH4byrgUhjlaiYWw",
+         "UCFk_TvqG1qQ72fl4mDI23Lw",
+         "UCpTncbkcIjS0v51sJz2jhsg",
+         "UCYtCYvJg9VZav6arnBy4Lvg",
+         "UCyzKvRnZBfMO6zyExHlKfwg",
+         "UCuyiRRgNobUdBqKBJ-ItyTw",
+         "UCmJr9VRnC8Q1TCIrf2G8bcg",
+         "UCEmayGKQnuysygWru7lCAmQ",
+         "UCMl0Vm3mI3iKfDF6cRAAFyA",
+         "UCRhxxdYgh4Bc0R27NDpCWsA",
+         "UCrxT9VVKe_X-rSEpnzIpXPQ",
+         "UCy3mHETEqjU9wtwiLHfg16A",
+         "UCBYZ1ufNQtPVBx6fBEiDN7g",
+         "UCQ3V2rldRXRIVJT48lOeUHQ"
+        ],
+        "unsubscribedTrailer": "EdjmQGCj3UA",
+        "profileColor": "#000000",
+        "country": "AE"
+       },
+       "image": {
+        "bannerImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1060-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no",
+        "bannerMobileImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w640-fcrop64=1,32b75a57cd48a5a8-nd-c0xffffffff-rj-k-no",
+        "bannerTabletLowImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1138-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no",
+        "bannerTabletImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1707-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no",
+        "bannerTabletHdImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w2276-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no",
+        "bannerTabletExtraHdImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w2560-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no",
+        "bannerMobileLowImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w320-fcrop64=1,32b75a57cd48a5a8-nd-c0xffffffff-rj-k-no",
+        "bannerMobileMediumHdImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w960-fcrop64=1,32b75a57cd48a5a8-nd-c0xffffffff-rj-k-no",
+        "bannerMobileHdImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1280-fcrop64=1,32b75a57cd48a5a8-nd-c0xffffffff-rj-k-no",
+        "bannerMobileExtraHdImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1440-fcrop64=1,32b75a57cd48a5a8-nd-c0xffffffff-rj-k-no",
+        "bannerTvImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w2120-fcrop64=1,00000000ffffffff-nd-c0xffffffff-rj-k-no",
+        "bannerTvLowImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w854-fcrop64=1,00000000ffffffff-nd-c0xffffffff-rj-k-no",
+        "bannerTvMediumImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1280-fcrop64=1,00000000ffffffff-nd-c0xffffffff-rj-k-no",
+        "bannerTvHighImageUrl": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w1920-fcrop64=1,00000000ffffffff-nd-c0xffffffff-rj-k-no"
+       },
+       "hints": [
+        {
+         "property": "channel.featured_tab.template.string",
+         "value": "Everything"
+        },
+        {
+         "property": "channel.banner.mobile.medium.image.url",
+         "value": "https://yt3.ggpht.com/ABvq5BwajlJuiNowV6ErXdS-NZ5v2I25cCWI-M31ggcG0I356xSZUus6CFkAVbPRQ3f3EiReOA=w640-fcrop64=1,32b75a57cd48a5a8-nd-c0xffffffff-rj-k-no"
+        },
+        {
+         "property": "channel.modules.show_comments.bool",
+         "value": "True"
+        }
+       ]
+      }
+     }
+    ]
+}

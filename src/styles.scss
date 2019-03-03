@@ -13,6 +13,19 @@ router-outlet {
     padding-top: 70px;
 }
 
+.col-xs-12 { max-width: 100%;; width: 100%; }
+.col-xs-11 { max-width: 92%; width: 92%; }
+.col-xs-10 { max-width: 83.33%; width: 83.33%; }
+.col-xs-9  { max-width: 75%; width: 75%; }
+.col-xs-8  { max-width: 66.6%; width: 66.6%; }
+.col-xs-7  { max-width: 58.3%; width: 58.3%; }
+.col-xs-6  { max-width: 50%; width: 50%; }
+.col-xs-5  { max-width: 42%; width: 42%; }
+.col-xs-4  { max-width: 33.33%; width: 33.33%; }
+.col-xs-3  { max-width: 25%; width: 25%; }
+.col-xs-2  { max-width: 16%; width: 16%; }
+.col-xs-1  { max-width: 8.33%; width: 8.33%; }
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .col-sm-12 { width: 100%; }

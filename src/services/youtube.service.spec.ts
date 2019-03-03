@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpRequest, HttpEvent, HttpEventType } from '@angular/common/http';
+import { HttpRequest } from '@angular/common/http';
 import { 
   YoutubeService,
   API_SEARCH,
@@ -22,7 +22,7 @@ import {
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Provider } from '@angular/core';
 
-const mockResponse = require('./mocks/channelSection.json')
+const mockResponse = require('./mocks/channelSection.json');
 
 describe('YoutubeService', () => {
 
@@ -50,7 +50,6 @@ describe('YoutubeService', () => {
 
       const mockReq = httpMock.expectOne((req: HttpRequest<any>) => {
         expect(req.url).toEqual(API_CHANNEL_SECTION);
-        expect(req.body).toEqual(mockResponse);
         return true;
       });
 
