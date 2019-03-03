@@ -14,6 +14,8 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+
+    "resolveJsonModule": true,
     "paths": {
       "@app/*": [ "src/app/*" ],
       "@assets/*": [ "src/assets/*" ],
@@ -24,6 +26,7 @@
       "@tests/*": [ "./*" ],
       "@theme/*": [ "src/theme/*" ],
       "@models": [ "src/services/models" ],
+      "@mocks/*": [ "src/services/mocks/*" ],
     },
     "lib": [
       "es2018",
