@@ -11,7 +11,7 @@ RUN rm -fr node_modules
 # before building image
 RUN npm i
 RUN npm i -g http-server
-# RUN npm run test
+RUN npm run test
 
 #RUN npm run build
 
@@ -19,10 +19,9 @@ RUN npm i -g http-server
 CMD cat src/environments/environment.ts \
  | sed -e "s/key: .*/key: '${YOUTUBE_API_KEY}'/g" > src/environments/environment.docker.ts
 CMD mv src/environments/environment.docker.ts src/environments/environment.ts
+# ... or may be it would be better to mount the whole enviroment file?
 
 #CMD npm start -- --env=docker
-CMD npm build
+CMD npm build:docs
 
-CMD ls ./dist/ibtube
-
-CMD http-server ./dist/ibtube -p 80
+CMD http-server ./docs -p 80
