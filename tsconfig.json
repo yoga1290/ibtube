@@ -22,7 +22,8 @@
       "@services/*": [ "src/services/*" ],
       "@services": [ "src/services" ],
       "@tests/*": [ "./*" ],
-      "@theme/*": [ "src/theme/*" ]
+      "@theme/*": [ "src/theme/*" ],
+      "@models": [ "src/services/models" ],
     },
     "lib": [
       "es2018",
