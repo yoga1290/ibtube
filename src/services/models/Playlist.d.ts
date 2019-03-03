@@ -1,3 +1,5 @@
+// https://developers.google.com/youtube/v3/docs/playlists#resource
+
 type datetime = string
 type integer = number
 type etag = string

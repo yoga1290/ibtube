@@ -1,15 +1,16 @@
 // https://developers.google.com/youtube/v3/docs/search#resource
 
 type datetime = string
+type THUMBNAIL_TYPE = "default" | "medium"| "high"
 
 export interface SearchResult {
     "kind": "youtube#searchResult",
     "etag": any,
     "id": {
         "kind": string,
-        "videoId": string,
-        "channelId": string,
-        "playlistId": string
+        "videoId"?: string,
+        "channelId"?: string,
+        "playlistId"?: string
     },
     "snippet": {
         "publishedAt": datetime,
@@ -17,11 +18,11 @@ export interface SearchResult {
         "title": string,
         "description": string,
         "thumbnails": {
-        (key): {
-            "url": string,
-            "width": number,
-            "height": number
-        }
+            ([THUMBNAIL_TYPE]): {
+                "url": string,
+                "width": number,
+                "height": number
+            }
         },
         "channelTitle": string,
         "liveBroadcastContent": string

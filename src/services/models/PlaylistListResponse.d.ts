@@ -1,4 +1,4 @@
-// https://developers.google.com/youtube/v3/docs/playlists/list
+// https://developers.google.com/youtube/v3/docs/playlists/list#response
 
 import { Playlist } from './Playlist'
 

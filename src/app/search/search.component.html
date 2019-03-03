@@ -1,11 +1,16 @@
 <div class="container col-xs-12 col-sm-12 col-md-12">
-
+    
     <a
         (click)="showFilters=!showFilters"
         id="filters">
         <i class="material-icons">tune</i>
         Filters
     </a>
+    <div
+        class="row col-xs-6 col-sm-6 col-md-4"
+        *ngIf="searchListResponse">
+        About {{searchListResponse.pageInfo.totalResults}} results</div>
+    
 
     <div
         class="filters-container col-xs-12 col-sm-12 col-md-12"
@@ -34,13 +39,30 @@
         </div>
     </div>
 
+        </div>
+    </div>
 
 </div>
 
-<!-- <video-preview
-    *ngFor="let video of searchListResponse.items"
-    [video]="video">
-</video-preview> -->
+<div 
+    *ngIf="searchListResponse">
+    
+    <div
+        *ngFor="let item of searchListResponse.items">
+
+        <app-video-preview
+            *ngIf="!isPlaylist(item)"
+            [searchResultItem]="item">
+        </app-video-preview>
+
+        <app-playlist-preview
+            *ngIf="isPlaylist(item)"
+            [playlist]="item">
+        </app-playlist-preview>
+    </div>
+
+</div>
+
 <!-- <div
     class="video-preview row col-xs-12">
     <img

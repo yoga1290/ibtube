@@ -1,37 +1,19 @@
 <div
   id="header">
 
-  <i class="material-icons">tv</i>
+  <i class="logo material-icons">play_circle_outline</i>
 
-  <div class="input-combo">
+  <div class="input-combo col-xs-10 col-sm-10 col-md-9">
     <div class="searchbox">
-        <input id="search" type="text">
+        <input
+          #query
+          type="text"
+          (keyup.enter)="search(query.value)">
     </div>
-    <button>
+    <button
+      (click)="search(query.value)">
         <i class="material-icons">search</i>
     </button>
   </div>
 
 </div>
-
-
-
-<!-- 
-<mat-toolbar color="primary">  
-  <mat-toolbar-row>
-
-    <button
-      (click)="sidenav.toggle()"
-      mat-flat-button>
-        <i class="material-icons">menu</i>
-    </button>
-
-    <input id="search">
-
-    <span>First Row</span>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span>Second Row</span>
-  </mat-toolbar-row>
-</mat-toolbar> -->

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router }     from '@angular/router';
-import { map }                from 'rxjs/operators';
-import { SearchListResponse } from '../../services/models/SearchListResponse'
-// @services is an alias defined in tsconfig.json
-// import { YoutubeService } from '@services/youtube.service'
-import { YoutubeService } from '../../services/youtube.service'
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+// @models & @services are aliases defined in tsconfig.json
+import { YoutubeService, ORDER, TYPE, TIME } from '@services/youtube.service';
+import {
+  SearchResult,
+  SearchListResponse,
+  PlaylistItem } from '@models';
 
 @Component({
   selector: 'app-search',
@@ -17,17 +19,17 @@ export class SearchComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private youtubeService:YoutubeService
+    private youtubeService: YoutubeService
   ) {
-    console.log('SearchComponent.youtubeService', youtubeService)
+    console.log('SearchComponent.youtubeService', youtubeService);
   }
 
 
   // type: "video,channel,playlist" | "channel" | "playlist" = "video,channel,playlist",
   //   time: string | "TODAY" | "WEEK" | "MONTH" | "ANY" = "ANY",
-  log = console.log
+  log = console.log;
 
-  query = ''
+  query: string = '';
   filters = {
     type: {
       name: 'Type',
@@ -74,57 +76,57 @@ export class SearchComponent implements OnInit {
         value: 'rating'
       }]
     }
-  }
+  };
 
-  keys = Object.keys
-  searchListResponse: SearchListResponse = null
-  
+  keys = Object.keys;
+  showFilters: boolean = false;
+  searchListResponse: SearchListResponse = null;
+  // searchListResponse: any = MOCK_SEARCH;
+
   ngOnInit() {
-    
+
     this.route.queryParams.subscribe(params => {
-      this.query = params['q'];
+      this.query = params.q;
       ['time', 'type', 'order'].forEach(k => {
-        this.filters[k].value = params[k]
+        this.filters[k].value = params[k];
       });
-    })
-    // this.fetch();
+    });
+    this.fetch();
   }
 
   fetch() {
-    let q = this.query;
-    let type = this.filters['type'].value;
-    let time = this.filters['time'].value;
+    const q = this.query;
+    const type = this.filters.type.value as TYPE;
+    const time = this.filters.time.value as TIME;
+    const order = this.filters.order.value as ORDER;
 
     this.youtubeService
-    .getSearchResult(q, null, type, time)
+    .getSearchResult(order, type, q, time)
     .subscribe((searchListResponse: SearchListResponse) => {
-      console.log('OK', searchListResponse.items[0].snippet.title);
-      this.searchListResponse = searchListResponse
-      // searchListResponse.items[0].snippet.title;
-      // searchListResponse.items[0].snippet.channelTitle;
-      // searchListResponse.items[0].snippet.description
-      // searchListResponse.items[0].snippet.publishedAt
-      // searchListResponse.items[0].snippet.thumbnails
-      // searchListResponse.pageInfo.totalResults
-    })
+      this.searchListResponse = searchListResponse;
+    });
+  }
+
+  isPlaylist(item: SearchResult) {
+    return item.id.kind === 'youtube#playlist'
   }
 
   updateRouteParams() {
-    let queryParams = {
+    const queryParams = {
       q: this.query
-    }
+    };
 
     Object.keys(this.filters).forEach(k => {
-      queryParams[k] = this.filters[k].value
-    })
-    
+      queryParams[k] = this.filters[k].value;
+    });
+
     this.router.navigate([], {
         relativeTo: this.route,
-        queryParams, 
-        queryParamsHandling: "merge"
+        queryParams,
+        queryParamsHandling: 'merge'
     });
-    
-    // this.fetch();
+
+    this.fetch();
   }
 
 }

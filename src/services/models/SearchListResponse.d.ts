@@ -1,4 +1,4 @@
-// https://developers.google.com/youtube/v3/docs/search/list
+// https://developers.google.com/youtube/v3/docs/search/list#response
 
 import { SearchResult } from './SearchResult'
 

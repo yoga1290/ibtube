@@ -1,14 +1,28 @@
 #header {
-    height: 56px;
+    // height: 56px;
     position: fixed;
     color: hsl(0, 0%, 98%);
     padding: 0 16px;
     display: flex;
+    width: 100%;
+    top:0px;
+    z-index: 2;
+    background-color: hsl(0, 0%, 98%);
+    padding-bottom: 10px;
+    
+    .logo {
+        color: red;
+        font-size: 32px;
+        margin-top: 10px;
+    }
 }
 
 .input-combo {
     background-color: hsl(0, 0%, 100%);
     border: 1px solid #ccc;
+    // width: 100%; //
+    position: absolute;
+    top: 10px;
     
 
     display: flex;
@@ -28,12 +42,16 @@
     .searchbox {
         
         padding: 0px;
-
+        position: relative;
+        right: 0px;
+        left: 0px;
+        width: 100%;
 
         input[type=text] {
             background-color: transparent;
             border: none;
             box-shadow: none;
+            width: 100%;
             // color: inherit;
             // font-family: 'Roboto','Noto',sans-serif;
             font-size: 16px;
@@ -45,7 +63,7 @@
             // margin: 0px;
         
         
-            position: relative;
+            // position: relative;
             align-items: center;
             // background-color: var(--yt-searchbox-background);
             
@@ -64,6 +82,10 @@
             -webkit-flex-direction: row;
             flex-direction: row;
         }
+        // input[type=text]:focus {
+        //     border: 0px;
+        //     border-color: transparent;
+        // }
     }
     
 
