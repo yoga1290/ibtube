@@ -5,7 +5,7 @@
     
     <div class="preview">
         <img
-            (click)="goToRoute('video/' + searchResultItem.id)"
+            (click)="goToRoute('/video/' + searchResultItem.id.videoId)"
             [alt]="searchResultItem.snippet.title"
             [src]="searchResultItem.snippet.thumbnails.medium.url"
             [width]="searchResultItem.snippet.thumbnails.medium.width"
@@ -15,7 +15,9 @@
     </div>    
 
     <div class="col-xs-5 col-sm-8 col-md-6">
-        <div class="title">
+        <div
+            (click)="goToRoute('/video/' + searchResultItem.id.videoId)"
+            class="title">
                 {{searchResultItem.snippet.title}}
         </div>
         <div class="row">
