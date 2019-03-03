@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --aot --prod --base-href / --output-hashing none",
     "build:docs": "ng build --aot --prod --output-path docs --base-href / --deploy-url /ibtube/ --output-hashing none",
-    "test": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
+    "test": "ng test --code-coverage --progress --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "e2e": "ng e2e"
