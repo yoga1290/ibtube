@@ -1,30 +1,94 @@
-<a id="filters">
-    <i class="material-icons">tune</i>
+<div class="container col-xs-12 col-sm-12 col-md-12">
     
-</a>
+    <a
+        (click)="showFilters=!showFilters"
+        id="filters">
+        <i class="material-icons">tune</i>
+        Filters
+    </a>
+    <div
+        class="row col-xs-6 col-sm-6 col-md-4"
+        *ngIf="searchListResponse">
+        About {{searchListResponse.pageInfo.totalResults}} results</div>
+    
 
-<div class="filter">
-    <h4 class="filter-group-name">Upload date</h4>
+    <div
+        class="filters-container col-xs-12 col-sm-12 col-md-12"
+        [ngClass]="{'visible': showFilters}">
+        <div
+            class="filter col-xs-12 col-sm-12 col-md-3"
+            *ngFor="let k of keys(filters)">
+            <h4 class="filter-group-name">{{filters[k].name}}</h4>
+            
+            <div 
+                class="filter-label"
+                *ngFor="let option of filters[k].options">
+                <a
+                    (click)="filters[k].value = option.value; updateRouteParams();"
+                    [ngClass]="{'selected': (option.value === filters[k].value)}">
+                    {{option.label}}
+                </a>
+                <i
+                    *ngIf="(k !== 'order' && option.value === filters[k].value)"
+                    (click)="filters[k].value=null; updateRouteParams();"
+                    class="material-icons">
+                    close
+                </i>
+            </div>
 
-    <a class="filter-label">Today</a>
-    <a class="filter-label">This week</a>
-    <a class="filter-label">This month</a>
+        </div>
+    </div>
+
+
 </div>
 
+<div 
+    *ngIf="searchListResponse">
+    
+    <div
+        *ngFor="let item of searchListResponse.items">
 
-<div class="filter">
-    <h4 class="filter-group-name">Type</h4>
+        <app-video-preview
+            *ngIf="!isPlaylist(item)"
+            [searchResultItem]="item">
+        </app-video-preview>
 
-    <a class="filter-label">Any</a>
-    <a class="filter-label">Channel</a>
-    <a class="filter-label">Playlist</a>
+        <app-playlist-preview
+            *ngIf="isPlaylist(item)"
+            [playlist]="item">
+        </app-playlist-preview>
+    </div>
+
 </div>
 
+<!-- <div
+    class="video-preview row col-xs-12">
+    <img
+        id="img"
+        class="style-scope yt-img-shadow"
+        alt=""
+        src="https://i.ytimg.com/vi/1EYE_jrREW4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&amp;rs=AOn4CLC5sS3zyUztqYc0-yYY7thZrEANtA"
+        width="246">
+    <div class="col-xs-8 col-md-6">
+        <div class="title">
+                E M E L - Insanity (Official Music Video)
+        </div>
+        <div class="row">
+            <div class="channel">
+                E M E L Mathlouthi
+            </div>•
+            <span class="view-count">
+                16K views
+            </span>•
+            <span class="date">
+                11 months ago
+            </span>
+        </div>
 
-<div class="filter">
-    <h4 class="filter-group-name">Sort by</h4>
-
-    <a class="filter-label">Relevance</a>
-    <a class="filter-label">Channel</a>
-    <a class="filter-label">Playlist</a>
-</div>
+        
+        <div class="description">
+                Director of photography: Claire Price Edited by: Andrew B. White.
+        </div>        
+    </div>
+    
+</div> -->

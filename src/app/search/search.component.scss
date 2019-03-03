@@ -1,5 +1,11 @@
+.container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 12px;
+}
+
 a#filters {
     margin-left: 8px;
+    float: right;
     
     display: inline-flex;
     -ms-flex-align: center;
@@ -27,10 +33,10 @@ a#filters {
     user-select: none;
     cursor: pointer;
     z-index: 0;
-    padding: 0.7em 0.57em;
+    // padding: 0.7em 0.57em;
     // font-family: var(--paper-font-common-base_-_font-family);
     -webkit-font-smoothing: antialiased;
-    background-color: var(--paper-button_-_background-color);
+    // background-color: var(--paper-button_-_background-color);
     // border: var(--paper-button_-_border);
     // color: var(--paper-button_-_color);
     // width: var(--paper-button_-_width);
@@ -41,8 +47,22 @@ a#filters:hover {
     transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.filters-container {
+    text-align: center;
+    max-height: 0px;
+    visibility: hidden;
+    transition: max-height 0.25s ease-out;
+}
+.filters-container.visible {
+    max-height: 1000px;
+    visibility: visible;
+    transition: max-height 0.25s ease-in;
+}
+
 .filter {
     padding: 0 32px 0 0;
+    display: inline-block;
+    margin-bottom: 32px;
 
     .filter-group-name {
         color: #0A0A0A;
@@ -61,5 +81,14 @@ a#filters:hover {
         color: #606060;
         padding-top: 12px;
         display: block;
+
+        a.selected, a:active {
+            font-weight: bold;
+        }
+        i.material-icons {
+            font-size: 16px;
+            top: 5px;
+            position: relative;
+        }
     }
 }
