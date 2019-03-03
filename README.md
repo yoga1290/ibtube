@@ -27,6 +27,17 @@ Run `npm run test`
 + Run `npm run build:docs`
 + Push `docs` directory changes
 
+# Screenshots:
+
+### Channel:
+![](docs/screenshots/channel.png)
+### Video:
+![](docs/screenshots/video.png)
+### Search:
+![](docs/screenshots/search.png)
+### coverage:
+![](docs/screenshots/coverage.png)
+
 # Try online:
 
 + [yoga1290.github.io/ibtube](https://yoga1290.github.io/ibtube)
