@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { VideoComponent } from './video.component';
+import { SearchComponent } from '../search/search.component';
+import { ChannelComponent } from '../channel/channel.component';
 import {RouterTestingModule} from '@angular/router/testing';
 
 import { ROUTES } from '../app-routing.module'
@@ -21,6 +25,8 @@ import {
   API_CHANNEL_SECTION
 } from '@services/youtube.service';
 
+import * as mockResponse from '@mocks/video.json'
+
 describe('VideoComponent', () => {
   let component: VideoComponent;
   let fixture: ComponentFixture<VideoComponent>;
@@ -32,6 +38,8 @@ describe('VideoComponent', () => {
       declarations: [ 
         VideoPreviewComponent,
         PlaylistPreviewComponent,
+        SearchComponent,
+        ChannelComponent,
         VideoComponent ],
       imports: [
         HttpClientTestingModule,
@@ -51,7 +59,30 @@ describe('VideoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', inject(
+    [HttpTestingController, YoutubeService],
+    (
+      httpMock: HttpTestingController,
+      youtubeService: YoutubeService
+    ) => {
+    router.navigate(['video/VIDEO_ID']);
+
+    
+
+    fixture.whenStable().then(() => {
+      expect(component).toBeTruthy();
+
+      expect(location.path()).toEqual('/video/VIDEO_ID');      
+
+      const mockReq = httpMock.expectOne((req: HttpRequest<any>) => {
+        expect(req.url).toEqual(API_VIDEOS);
+        return true;
+      });
+  
+      mockReq.flush(mockResponse);
+      httpMock.verify();
+      
+    });
+
+  }));
 });
