@@ -85,13 +85,15 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
+    // this will be triggered when params change anytime later:
     this.route.queryParams.subscribe(params => {
       this.query = params.q;
       ['time', 'type', 'order'].forEach(k => {
         this.filters[k].value = params[k] ? params[k]:this.filters[k].value;
       });
+      this.fetch();
     });
-    this.fetch();
+    
   }
 
   fetch() {
@@ -125,8 +127,6 @@ export class SearchComponent implements OnInit {
         queryParams,
         queryParamsHandling: 'merge'
     });
-
-    this.fetch();
   }
 
 }
