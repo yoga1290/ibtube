@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
 
-import { ChannelComponent } from './channel.component';
 import { Location } from '@angular/common';
 
+import { ChannelComponent } from './channel.component';
 import { SearchComponent } from '../search/search.component';
 import { VideoComponent } from '../video/video.component';
 import { VideoPreviewComponent } from '../shared/video-preview/video-preview.component';
@@ -79,13 +79,19 @@ describe('ChannelComponent', () => {
 
         const mockReq = httpMock.expectOne((req: HttpRequest<any>) => {
           console.log('req.url', req.url);
-
-
-          expect(req.url).toEqual(API_CHANNELS);
+          expect(req.url).toEqual(API_CHANNEL_SECTION);
           return true;
         });
   
         mockReq.flush(mockResponse);
+
+        const mockReq2 = httpMock.expectOne((req: HttpRequest<any>) => {
+          console.log('req.url', req.url);
+          expect(req.url).toEqual(API_CHANNELS);
+          return true;
+        });
+
+        mockReq2.flush(mockResponse);
         httpMock.verify();
 
         let banner = fixture.debugElement.query(By.css('banner'))//.nativeElement
