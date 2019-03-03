@@ -1,0 +1,77 @@
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/lUNs-pdzdISNwUxKyr_X4b1pQ-U\"",
+    "pageInfo": {
+     "totalResults": 1,
+     "resultsPerPage": 1
+    },
+    "items": [
+     {
+      "kind": "youtube#video",
+      "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/vWZbp0OrALptNfbhZzwJiDHDm-0\"",
+      "id": "ABVVDSgihYs",
+      "snippet": {
+       "publishedAt": "2018-01-26T16:49:01.000Z",
+       "channelId": "UCnEiGCE13SUI7ZvojTAVBKw",
+       "title": "Bill Gates & Steven Pinker Discuss Enlightenment Now",
+       "description": "People all over the world are living longer, healthier, and happier lives, so why do so many think things are getting worse? Bill Gates sat down with author Steven Pinker to discuss his most recent book “Enlightenment Now” which provides a holistic picture of how and why the world is getting better. \nLearn more at http://b-gat.es/2EUSvDq",
+       "thumbnails": {
+        "default": {
+         "url": "https://i.ytimg.com/vi/ABVVDSgihYs/default.jpg",
+         "width": 120,
+         "height": 90
+        },
+        "medium": {
+         "url": "https://i.ytimg.com/vi/ABVVDSgihYs/mqdefault.jpg",
+         "width": 320,
+         "height": 180
+        },
+        "high": {
+         "url": "https://i.ytimg.com/vi/ABVVDSgihYs/hqdefault.jpg",
+         "width": 480,
+         "height": 360
+        },
+        "standard": {
+         "url": "https://i.ytimg.com/vi/ABVVDSgihYs/sddefault.jpg",
+         "width": 640,
+         "height": 480
+        },
+        "maxres": {
+         "url": "https://i.ytimg.com/vi/ABVVDSgihYs/maxresdefault.jpg",
+         "width": 1280,
+         "height": 720
+        }
+       },
+       "channelTitle": "Bill Gates",
+       "tags": [
+        "Bill",
+        "Gates"
+       ],
+       "categoryId": "29",
+       "liveBroadcastContent": "none",
+       "localized": {
+        "title": "Bill Gates & Steven Pinker Discuss Enlightenment Now",
+        "description": "People all over the world are living longer, healthier, and happier lives, so why do so many think things are getting worse? Bill Gates sat down with author Steven Pinker to discuss his most recent book “Enlightenment Now” which provides a holistic picture of how and why the world is getting better. \nLearn more at http://b-gat.es/2EUSvDq"
+       },
+       "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+       "duration": "PT2M47S",
+       "dimension": "2d",
+       "definition": "hd",
+       "caption": "true",
+       "licensedContent": false,
+       "projection": "rectangular"
+      },
+      "statistics": {
+       "viewCount": "115611",
+       "likeCount": "1861",
+       "dislikeCount": "32",
+       "favoriteCount": "0",
+       "commentCount": "216"
+      }
+     }
+    ]
+   }
+   
+   
