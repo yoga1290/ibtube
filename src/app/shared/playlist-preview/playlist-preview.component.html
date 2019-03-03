@@ -21,12 +21,11 @@
                 {{playlist.snippet.title}}
         </div>
         <div class="row">
-            <div class="channel">
+            <div
+                (click)="goToRoute('channel/' + playlist.snippet.channelId)"
+                class="channel">
                 {{playlist.snippet.channelTitle}}
             </div>•
-            <span class="view-count">
-                 views
-            </span>•
             <span class="date">
                 {{fromNow(playlist.snippet.publishedAt)}}
             </span>
